@@ -202,6 +202,18 @@ static void init_engine(void)
 {
     struct rkisp_cl_prepare_params_s params = {0};
     int ret = 0;
+    rkisp_metadata_info_t *metadata_info = NULL;
+    int num = 0;
+
+    ret = rkisp_construct_iq_default_metadatas(&metadata_info, &num);
+    if (ret < 0) {
+        ERR("Fail to construct iq default metadatas!");
+        exit(-1);
+    }
+    if (num <= 0) {
+        ERR("construct default metadata count: %d", num);
+        exit(-1);
+    }
 
     ret = rkisp_cl_init(&rkisp_engine, NULL, NULL);
     if (ret) {
@@ -232,6 +244,9 @@ static void init_engine(void)
 
         break;
     }
+
+    DBG("@%s %d: isp:%s, param:%s, stat:%s, sensor:%s \n", __FUNCTION__, __LINE__,
+         params.isp_sd_node_path, params.isp_vd_params_path, params.isp_vd_stats_path, params.sensor_sd_node_path);
 
     if (rkisp_cl_prepare(rkisp_engine, &params)) {
         ERR("rkisp engine prepare failed !\n");
