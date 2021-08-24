@@ -52,6 +52,10 @@ system/core/libutils/include \
 system/core/include \
 frameworks/native/libs/binder/include
 endif
+ifeq (1,$(strip $(shell expr $(PLATFORM_SDK_VERSION) \>= 31)))
+LOCAL_SHARED_LIBRARIES:= \
+    liblog
+endif
 
 LOCAL_MODULE_TAGS:= optional
 include $(BUILD_STATIC_LIBRARY)

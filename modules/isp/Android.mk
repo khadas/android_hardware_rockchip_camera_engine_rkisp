@@ -93,4 +93,10 @@ LOCAL_STATIC_LIBRARIES += \
 
 LOCAL_MODULE:= librkisp_analyzer
 
+ifeq (1,$(strip $(shell expr $(PLATFORM_SDK_VERSION) \>= 31)))
+LOCAL_SHARED_LIBRARIES:= \
+    liblog
+endif
+
+
 include $(BUILD_STATIC_LIBRARY)

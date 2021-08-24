@@ -26,6 +26,12 @@ system/core/libutils/include \
 system/core/include
 endif
 
+ifeq (1,$(strip $(shell expr $(PLATFORM_SDK_VERSION) \>= 31)))
+LOCAL_SHARED_LIBRARIES:= \
+    liblog
+endif
+
+
 include $(BUILD_STATIC_LIBRARY)
 
 # build xcore
@@ -119,6 +125,11 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_C_INCLUDES += \
 system/core/libutils/include \
 system/core/include
+endif
+
+ifeq (1,$(strip $(shell expr $(PLATFORM_SDK_VERSION) \>= 31)))
+LOCAL_SHARED_LIBRARIES:= \
+    liblog
 endif
 
 include $(BUILD_STATIC_LIBRARY)
