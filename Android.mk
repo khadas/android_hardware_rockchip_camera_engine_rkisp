@@ -1,4 +1,4 @@
-ifneq ($(filter rk3368 rk3399 rk3288 rk3366 rk3126c rk3328 rk3326 rk3128h rk322x rk3399pro, $(strip $(TARGET_BOARD_PLATFORM))), )
+ifneq ($(filter rk3528 rk3368 rk3399 rk3288 rk3366 rk3126c rk3328 rk3326 rk3128h rk322x rk3399pro, $(strip $(TARGET_BOARD_PLATFORM))), )
 CONFIG_FILE_ANDROID = $(shell pwd)/productConfigs.mk
 CONFIG_FILE_LINUX = $(call my-dir)/productConfigs.mk
 ifeq ($(CONFIG_FILE_ANDROID), $(wildcard $(CONFIG_FILE_ANDROID)))
