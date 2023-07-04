@@ -27,11 +27,11 @@ extern "C"
 
 /* comment this now, this will cause following compile error:*/
 /*
-/usr/include/c++/4.8/cstdlib: In function ¡®long long int std::abs(long long int)¡¯:
-/usr/include/c++/4.8/cstdlib:174:20: error: declaration of C function ¡®long long int std::abs(long long int)¡¯ conflicts with
+/usr/include/c++/4.8/cstdlib: In function 'long long int std::abs(long long int)':
+/usr/include/c++/4.8/cstdlib:174:20: error: declaration of C function 'long long int std::abs(long long int)' conflicts with
    abs(long long __x) { return __builtin_llabs (__x); }
                     ^
-/usr/include/c++/4.8/cstdlib:166:3: error: previous declaration ¡®long int std::abs(long int)¡¯ here
+/usr/include/c++/4.8/cstdlib:166:3: error: previous declaration 'long int std::abs(long int)' here
    abs(long __i) { return __builtin_labs(__i); }
 
 */

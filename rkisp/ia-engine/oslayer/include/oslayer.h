@@ -726,7 +726,7 @@ extern int32_t osQueueDestroy(osQueue* pQueue);
  *  This function must be called before any other osAtomicXXX call.
  *
  ******************************************************************************/
-extern int32_t osAtomicInit();
+extern int32_t osAtomicInit(void);
 
 /******************************************************************************
  *  osAtomicShutdown()
@@ -738,7 +738,7 @@ extern int32_t osAtomicInit();
  *  when osAtomicInit has been called before.
  *
  ******************************************************************************/
-extern int32_t osAtomicShutdown();
+extern int32_t osAtomicShutdown(void);
 
 /******************************************************************************
  *  osAtomicTestAndClearBit()

@@ -50,7 +50,7 @@ extern "C" {
 #endif
 void xcam_set_log (const char* file_name);
 void xcam_print_log (int module, int level, const char* format, ...);
-int xcam_get_log_level();
+int xcam_get_log_level(void);
 #ifdef  __cplusplus
 }
 #endif

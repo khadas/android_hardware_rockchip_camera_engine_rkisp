@@ -876,7 +876,7 @@ static int gAtomicInitCnt = 0; /* conuter of Atomic init and destroy */
  *  This function must be called before any other osAtomicXXX call.
  *
  ******************************************************************************/
-int32_t osAtomicInit() {
+int32_t osAtomicInit(void) {
 #ifndef OSLAYER_KERNEL
   /* initialize atomic mutex */
   if (gAtomicInitCnt++ == 0) /* TODO: multithread will be wrong */
@@ -894,7 +894,7 @@ int32_t osAtomicInit() {
  *  when osAtomicInit has been called before.
  *
  ******************************************************************************/
-int32_t osAtomicShutdown() {
+int32_t osAtomicShutdown(void) {
 #ifndef OSLAYER_KERNEL
   /* destroy atomic mutex */
   /* TODO: multithread will be wrong */
